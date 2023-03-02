@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'FiraCode-Bold';
+  font-weight: 700;
+  font-style: normal;
+  src: local('FiraCode-Bold'),
+  url('../fonts/FiraCode-Bold.woff2') format('woff2'),
+  url('../fonts/FiraCode-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FiraCode-Light';
+  font-weight: 300;
+  font-style: normal;
+  src: local('FiraCode-Light'),
+        url('../fonts/FiraCode-Light.woff2') format('woff2'),
+        url('../fonts/FiraCode-Light.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FiraCode-Medium';
+  font-weight: 500;
+  font-style: normal;
+  src: local('FiraCode-Medium'),
+        url('../fonts/FiraCode-Medium.woff2') format('woff2'),
+        url('../fonts/FiraCode-Medium.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FiraCode-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('FiraCode-Regular'),
+        url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+        url('../fonts/FiraCode-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'FiraCode-SemiBold';
+  font-weight: 600;
+  font-style: normal;
+  src: local('FiraCode-Regular'),
+        url('../fonts/FiraCode-SemiBold.woff2') format('woff2'),
+        url('../fonts/FiraCode-SemiBold.woff') format('woff');
+  font-display: swap;
+}

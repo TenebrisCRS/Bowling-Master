@@ -1,0 +1,31 @@
+$accent: #4442BA;
+$preaccent: #5957CC;
+$white: #ffffff;
+$bg: #0F0F0F;
+$grey: rgba(255, 255, 255, 0.5);
+
+%fira-300 {
+  font-family: 'FiraCode-Light', sans-serif;
+  font-weight: 300;
+}
+
+%fira-400 {
+  font-family: 'FiraCode-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%fira-500 {
+  font-family: 'FiraCode-Medium', sans-serif;
+  font-weight: 500;
+}
+
+%fira-600 {
+  font-family: 'FiraCode-SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+%fira-700 {
+  font-family: 'FiraCode-Bold', sans-serif;
+  font-weight: 700;
+}
+

@@ -3,7 +3,133 @@
 @import 'reset';
 @import 'global';
 
+.header {
+  background-image: url("../images/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 80px;
 
+  &__inner {
+    border-right: 2px solid $grey;
+    border-left: 2px solid $grey;
+    padding-left: 75px;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url("../images/icons/header-frame-icon.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: -21px;
+      top: 580px;
+      animation: header-frame 2s linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 67px;
+    line-height: 104px;
+    position: relative;
+    color: $white;
+
+    &::before {
+      content: "BOWLING MASTER";
+      position: absolute;
+      top: 2px;
+      left: -2px;
+      color: $accent;
+      width: 700px;
+    }
+  }
+
+  &__typing {
+    font-size: 39px;
+    line-height: 45px;
+    margin-bottom: 70px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-size: 23px;
+    line-height: 36px;
+    padding: 15px 30px;
+    background-color: $preaccent;
+    border-radius: 5px;
+    margin-bottom: 80px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 355px;
+      height: 65px;
+      top: 6px;
+      right: -6px;
+      border-right: 2px dotted $white;
+      border-bottom: 2px dotted $white;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  &__info-box {
+    display: flex;
+    padding-bottom: 90px;
+  }
+
+  &__info-items {
+    &:nth-child(1) {
+      margin-right: 35px;
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      padding: 0 23px 0 66px;
+
+      &::after,
+      &::before {
+        content: '';
+        width: 2px;
+        height: 145px;
+        position: absolute;
+        background-color: $grey;
+        top: -15px;
+      }
+      &::after {
+        right: 0;
+      }
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-left: 26px;
+    }
+  }
+
+  &__info-item {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
 
 
 
