@@ -37,6 +37,7 @@ function scripts() {                              //Функция для скр
   return src([                                    //Берём данные из:
     'node_modules/jquery/dist/jquery.js',
     'node_modules/typewriter-effect/dist/core.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))                    //Перемещаем в файл при помощи плакина gulp-concat

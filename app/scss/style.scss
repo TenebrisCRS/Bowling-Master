@@ -1,10 +1,12 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
+@import 'animation';
 
 .header {
-  background-image: url("../images/header-bg.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -45,6 +47,11 @@
     line-height: 104px;
     position: relative;
     color: $white;
+    @extend %fira-700;
+    text-transform: uppercase;
+    transform: translateY(80px);
+    opacity: 0%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
     &::before {
       content: "BOWLING MASTER";
@@ -52,14 +59,19 @@
       top: 2px;
       left: -2px;
       color: $accent;
-      width: 700px;
     }
+  }
+
+  &__title.active {
+    transform: translateY(0);
+    opacity: 100%;
   }
 
   &__typing {
     font-size: 39px;
     line-height: 45px;
     margin-bottom: 70px;
+    height: 90px;
   }
 
   &__link {
@@ -71,11 +83,15 @@
     background-color: $preaccent;
     border-radius: 5px;
     margin-bottom: 80px;
+    transition: background-color 0.3s ease-in-out;
+    transform: translateX(-80px);
+    opacity: 0%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
     &::before {
       content: '';
       position: absolute;
-      width: 355px;
+      width: 100%;
       height: 65px;
       top: 6px;
       right: -6px;
@@ -89,19 +105,24 @@
     }
   }
 
+  &__link.active {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+
   &__info-box {
     display: flex;
     padding-bottom: 90px;
   }
 
-  &__info-items {
+  &__info-list {
     &:nth-child(1) {
       margin-right: 35px;
     }
 
     &:nth-child(2) {
       position: relative;
-      padding: 0 23px 0 66px;
+      padding: 0 70px 0 24px;
 
       &::after,
       &::before {
@@ -132,11 +153,317 @@
   }
 }
 
+.benefits {
+  padding-bottom: 90px;
+
+  &__inner {
+    border-right: 2px solid $grey;
+    border-left: 2px solid $grey;
+    padding-left: 75px;
+    padding-top: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %fira-600;
+    font-size: 57px;
+    line-height: 88px;
+    position: relative;
+    color: $accent;
+    margin-bottom: 7px;
+    opacity: 0%;
+    transform: translateY(100px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    
+    &::after {
+      content: "Преимущества";
+      position: absolute;
+      top: 2px;
+      left: -2px;
+      color: $white;
+      width: 700px;
+    }
+  }
+
+  &__title.active {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+
+  &__subtitle {
+    @extend %fira-600;
+    font-size: 20px;
+    line-height: 31px;
+    margin-bottom: 50px;
+    transform: translateX(-200px);
+    opacity: 0%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &__subtitle.active {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 170px;
+    row-gap: 45px;
+    max-width: 730px;
+  }
+
+  &__list-item {
+    max-width: 120px;
+    text-align: center;
+
+    &:nth-child(1) .benefits__description,
+    &:nth-child(4) .benefits__description {
+      transform: translateX(-80px);
+    }
+  
+    &:nth-child(2) .benefits__description,
+    &:nth-child(5) .benefits__description {
+      transform: translateY(-80px);
+    }
+  
+    &:nth-child(3) .benefits__description,
+    &:nth-child(6) .benefits__description {
+      transform: translateX(80px);
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    margin-bottom: 5px;    opacity: 0%;
+    transform: translateY(100px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &__img.active {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+
+&__description {
+  opacity: 0%;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+& .benefits__description.active{
+  opacity: 100%;
+  transform: translate(0px, 0px);
+}
 
 
 
+  &__aside-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.slider {
+  padding: 30px 0 90px;
+
+  &__item {
+    padding: 0 100px;
+  }
+
+  &__img {
+    max-width: 860px;
+    object-fit: cover;
+  }
+}
+
+.slick-slide {
+  filter: brightness(30%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.slick-center.slick-slide {
+  filter: brightness(100%);
+}
 
 
 
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  li {
+    padding: 0 5px;
+    line-height: 0;
+    margin-top: -30px;
+    button {
+      padding: 0;
+      font-size: 0;
+      line-height: 0;
+      background-color: transparent;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: none;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $real-grey;
+        position: absolute;
+        top: 50px;
+        transform: translate(-50%, -50%);
+        transition: background-color 0.3s linear;
+      }
+    }
+
+    &.slick-active {
+      button {
+        &::before {
+          background-color: $accent;
+        }
+      }
+    }
+  }
+}
+
+.slick-arrow {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  
+  path {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &.slick-next {
+    right: calc(50% - 480px);
+  }
+
+  &.slick-prev {
+    left: calc(50% - 480px);
+  }
+}
+
+.slick-disabled {
+    path {
+      fill: #fff;
+    }
+}
+
+.form {
+  padding: 50px 0px;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    max-width: 560px;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $accent;
+    margin-bottom: 35px;
+    transform: translateX(-100px);
+    opacity: 0%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &__item.active {
+    transform: translateX(0px);
+    opacity: 100%;
+  }
+
+  &__item--date,
+  &__item--time {
+    max-width: 145px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %fira-600;
+  }
+
+  &__title--num {
+    &::before {
+      content: '+7';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 0;
+      top: 51px;
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    outline: transparent;
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+  }
+
+  &__input--num {
+    padding-left: 40px;
+  }
+
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 20px 60px;
+    background-color: $preaccent;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transform: translateY(100px);
+    opacity: 0%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  &__btn.active {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 23px;
+    color: $real-grey;
+    text-align: center;
+  }
+}
 
 @import 'media';
