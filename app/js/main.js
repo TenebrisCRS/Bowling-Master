@@ -1,26 +1,25 @@
 $(function () {
 
-
-
+  
   $(function(){
     var dtToday = new Date();
-
+    
     var month = dtToday.getMonth() + 5;
     var day = dtToday.getDate();
     var year = dtToday.getFullYear();
-
+    
     if(month < 10)
-        month = '0' + month.toString();
+    month = '0' + month.toString();
     if(day < 10)
-        day = '0' + day.toString();
+    day = '0' + day.toString();
 
     var maxDate = year + '-' + month + '-' + day;
-
+    
     $('.form__input--date').attr('max', maxDate);
-});
-
-$('.slider__list').slick ({
-  dots: true,
+  });
+  
+  $('.slider__list').slick ({
+    dots: true,
   speed: 300,
   slidesToShow: 1,
   centerMode: true,
@@ -41,22 +40,22 @@ $('.slider__list').slick ({
 });
 
 
-  let animArr = [$('.header__title'), $('.header__link'), $('.benefits__title'), $('.benefits__subtitle'), $('.benefits__img'), $('.benefits__description'), $('.form__item'), $('.form__btn')];
+let animArr = [$('.header__title'), $('.header__link'), $('.benefits__title'), $('.benefits__subtitle'), $('.benefits__img'), $('.benefits__description'), $('.form__item'), $('.form__btn')];
 
   for (let i = 0; i < animArr.length; i++) {
     // console.log(animArr[i]);
     is_fully_shown(animArr[i]);
   }
-
+  
   function is_fully_shown(target) {
     var wt = $(window).scrollTop(); 
     var wh = $(window).height();    
     var eh = $(target).height();  
     var et = $(target).offset().top;
-
+    
     if (wt > 300) {
-    $('.benefits__aside-img').css({top: - (wt - 300)});
-  } else {
+      $('.benefits__aside-img').css({top: - (wt - 300)});
+    } else {
     $('.benefits__aside-img').css({top: 0});
   }
     
@@ -81,7 +80,7 @@ $('.slider__list').slick ({
 
 
 
-new Typewriter('.header__typing', {
+  new Typewriter('.header__typing', {
   strings: ['Собрали только лучшее из всей индустрии!', 'Лучшая площадка для игры в боулинг!', 'Отполированные до блеска дорожки!'],
   autoStart: true,
   delay: 90,
@@ -95,14 +94,13 @@ $(".header__link").on("click", function (event) {
 
   //забираем идентификатор бока с атрибута href
   var id  = $(this).attr('href'),
-
+  
   //узнаем высоту от начала страницы до блока на который ссылается якорь
     top = $(id).offset().top;
-  
-  //анимируем переход на расстояние - top за 1500 мс
-  $('body,html').animate({scrollTop: top}, 1500);
+    
+    //анимируем переход на расстояние - top за 1500 мс
+    $('body,html').animate({scrollTop: top}, 1500);
 });
-
 
 
 })
