@@ -6,7 +6,7 @@
 @import 'animation';
 
 .header {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/header-bg.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/dist/header-bg.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -21,7 +21,7 @@
 
     &::before {
       content: '';
-      background-image: url("../images/icons/header-frame-icon.png");
+      background-image: url("../images/dist/icons/header-frame-icon.webp");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;

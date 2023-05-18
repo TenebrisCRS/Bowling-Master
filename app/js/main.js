@@ -43,7 +43,6 @@ $(function () {
 let animArr = [$('.header__title'), $('.header__link'), $('.benefits__title'), $('.benefits__subtitle'), $('.benefits__img'), $('.benefits__description'), $('.form__item'), $('.form__btn')];
 
   for (let i = 0; i < animArr.length; i++) {
-    // console.log(animArr[i]);
     is_fully_shown(animArr[i]);
   }
   
@@ -64,16 +63,11 @@ let animArr = [$('.header__title'), $('.header__link'), $('.benefits__title'), $
       console.log(wt);
       target.addClass('active');
       return true;
-    } else {
-      // console.log('No');
-      target.removeClass('active'); 
-      return false;
-    }
+    } 
   }
 
   $(window).scroll(function watchingFunc(){
     for (let i = 0; i < animArr.length; i++) {
-      // console.log(animArr[i]);
       is_fully_shown(animArr[i]);
     }
   });
